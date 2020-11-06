@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/jquery.formstyler.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="header1">
+        <div class="header__top">
+          <div class="container">
+            <div class="header__contacts">
+              <div class="header__content-inner">
+                <div class="header__logo">
+                  <a href="main">
+                    <img src="img/logo.png" alt="" />
+                  </a>
+                </div>
+                <nav class="menu">
+                  <div class="header__btn-menu">
+                    <span class="icon-list-ul"></span>
+                  </div>
+                  <ul>
+                    <li><a href="about#about">Про нас</a></li>
+                    <li><a href="#">Подати проект</a></li>
+                    <li><a href="fond">Фондувати</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header-sign">
+                <% if (!authData.state) { %>
+                <a
+                  data-fancybox
+                  data-src="#modal"
+                  href="javascript:;"
+                  class="header__btn-signin"
+                  href="#"
+                >
+                  Реєстрація
+                </a>
+                <a
+                  data-fancybox
+                  data-src="#modal1"
+                  href="javascript:;"
+                  class="header__btn-signup"
+                  href="#"
+                >
+                  Вхід
+                </a>
+                <% } else if (authData.state && authData.name) { %> Вітаємо, <%=
+                authData.name %>! <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <a name="projects"></a>
+    <section class="form">
+      <div class="container">
+        <div class="form__inner">
+          <div class="form__content">
+            <div class="form__title-box">
+              <div class="form__title">
+                Маєш ідею як посприяти розвитку об'єднаної територіальної
+                громади?
+                <p></p>
+                Але не знаєш як це зробити?
+                <a href="about" class="form-about">
+                  Дізнатися як подати проект?
+                </a>
+                <p></p>
+                Заповни форму та подай проект на затвердження.
+              </div>
+            </div>
+
+            <div class="form__box">
+              <form action="/sendMail" method="POST">
+                <div class="form__box-inner">
+                  <div class="form__box-left">
+                    <label>
+                      НАЗВА ПРОЕКТУ
+                      <input type="text" name="projectName" />
+                    </label>
+                    <div class="">
+                      Дайте ім'я своєму проекту.
+                    </div>
+                    <label>
+                      НАЗВА ОТГ
+                      <input type="text" name="communityName" />
+                    </label>
+                    <label>
+                      ОБЛАСТЬ
+                      <input type="text" name="regionName" />
+                    </label>
+                    <label>
+                      БЮДЖЕТ
+                      <input type="text" name="budget" />
+                    </label>
+                    <div class="">
+                      Впишіть бюджет проекту в гривнях.
+                    </div>
+                    <label>
+                      ТРИВАЛІСТЬ ЗБОРУ КОШТІВ
+                      <input type="text" name="durationDays" />
+                    </label>
+                    <div class="">
+                      Впишіть термін до 100 днів.
+                    </div>
+                    <label>
+                      КОМАНДА ПРОЕКТУ
+                      <input type="text" name="projectTeam" />
+                    </label>
+                    <button class="default-btn" type="submit">
+                      Надіслати
+                    </button>
+                  </div>
+
+                  <div class="form__box-right">
+                    <label>
+                      КАТЕГОРІЯ
+                    </label>
+                    <div class="check-box">
+                      <div class="check-box-left">
+                        <label class="project__check"
+                          >Усі категорії
+                          <input
+                            type="checkbox"
+                            checked="checked"
+                            name="allCategories"
+                          />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Транспорт
+                          <input type="checkbox" name="transport" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Діти
+                          <input type="checkbox" name="kids" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Здоров'я
+                          <input type="checkbox" name="health" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+
+                      <div class="check-box-middle">
+                        <label class="project__check"
+                          >Література
+                          <input type="checkbox" name="literature" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Економіка
+                          <input type="checkbox" name="economic" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Освіта
+                          <input type="checkbox" name="education" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Інтернет
+                          <input type="checkbox" name="internet" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+
+                      <div class="check-box-right">
+                        <label class="project__check"
+                          >Екологія
+                          <input type="checkbox" name="ecology" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Технології
+                          <input type="checkbox" name="technology" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Дороги
+                          <input type="checkbox" name="roads" />
+                          <span class="checkmark"></span>
+                        </label>
+
+                        <label class="project__check"
+                          >Соціальний бізнес
+                          <input type="checkbox" name="socialBusiness" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <label>
+                      КОРОТКИЙ ОПИС
+                      <textarea name="shortDescription"></textarea>
+                    </label>
+                    <label>
+                      Поясніть ідею свого проекту одним реченням.
+                    </label>
+
+                    <label>
+                      ДЕТАЛЬНИЙ ОПИС
+                      <textarea name="detailDescription"></textarea>
+                    </label>
+
+                    <a name="achievement"></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="container">
+          <div class="footer__inner">
+            <a href="main">
+              <div class="to_top s-arrow" style="display: inline-block;"></div>
+            </a>
+            <div class="footer__info">
+              <div class="footer__title">
+                INCROWD
+              </div>
+              <div class="footer__text">
+                Краудфандингова платформа для розвитку об'єднаних територіальних
+                громад.
+              </div>
+              <!--<a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+                            Безкоштовна консультація
+                        </a>-->
+              <ul class="footer__list">
+                <li>
+                  <a class="footer__phone" href="tel:380632821043">
+                    +38 (063) 616 56 21</a
+                  >
+                </li>
+                <li><a href="#">olgamakarmyhailivna@gmail.com</a></li>
+                <li><a class="footer__adress" href="#">Україна</a></li>
+              </ul>
+            </div>
+            <div class="footer__map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10938209.494752761!2d22.208320093863712!3d47.98547154770034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDRl9C90LA!5e0!3m2!1suk!2sua!4v1589296788537!5m2!1suk!2sua"
+                height="250"
+                frameborder="0"
+                style="border: 0;"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <div class="container">
+          <div class="copy__text">
+            с 2020 Template by Olga Makar. Всі права захищені.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="modal">
+      <form action="/register" method="POST">
+        <input type="text" id="name" name="name" required placeholder="ПІБ" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ваша електронна пошта"
+        />
+        <input type="text" placeholder="Ваш номер телефону" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Пароль"
+        />
+        <input type="submit" id="registrationButton" value="Зареєструватися" />
+      </form>
+    </div>
+
+    <div id="modal1">
+      <form action="/login" method="POST">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ваш логін"
+          required
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Ваш пароль"
+        />
+        <input type="submit" value="Увійти" />
+      </form>
+    </div>
+    <div id="modal2">
+      <form>
+        <label> Сума внеску в грн </label>
+        <input type="text" placeholder="Вкажіть суму внеску" />
+        <label> Спосіб орлати LIQ Pay </label>
+        <input type="submit" value="Оплатити" />
+      </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.formstyler.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

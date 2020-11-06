@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" 
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css"> 
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery.formstyler.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <header class="header">
+        <section class="header1">
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__contacts">
+                        <div class="header__content-inner">
+                            <div class="header__logo">
+                                <a href="#">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <nav class="menu">
+                                <div class="header__btn-menu">
+                                    <span class="icon-list-ul"></span>
+                                </div>
+                                <ul>
+                                    <li><a href="about#about">Про нас</a></li>
+                                    <li><a href="post">Подати проект</a></li>
+                                    <li><a href="fond">Фондувати</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="header-sign">
+                        <% if (!authData.state) { %>
+                        <a 
+                        data-fancybox 
+                        data-src="#modal" 
+                        href="javascript:;" 
+                        class="header__btn-signin" 
+                        href="#"
+                        >
+                            Реєстрація
+                        </a>
+                        <a 
+                        data-fancybox 
+                        data-src="#modal1" 
+                        href="javascript:;" 
+                        class="header__btn-signup" 
+                        href="#"
+                        >
+                            Вхід
+                        </a>
+                        <div class="header-sign-after"></div>
+                        <% } else if (authData.state && authData.name) { %> Вітаємо, <%=
+                            authData.name %>! <% } %>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        <section class="header2">
+            <div class="header__content">
+                <div class="container">
+                    -<div class="header__content-inner">
+                        <div class="header__logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <nav class="menu">
+                            <div class="header__btn-menu">
+                                <span class="icon-list-ul"></span>
+                            </div>
+                            <ul>
+                                <li><a href="#about">Про компанію</a></li>
+                                <li><a href="#projects">Послуги</a></li>
+                                <li><a href="#achievement">Концепція</a></li>
+                            </ul>
+                        </nav>
+                    </div> y
+                </div>
+            </div>
+        </section>-->
+    </header>
+  <section class="slider">
+    <!--<div class="slider__map">-->
+       <!--<a href="#">
+            <img src="img/map.png" alt="">
+        </a>-->
+    <!--</div>-->
+    <!--<img src="img/map.png" alt="">-->
+    <div class="container01">
+           <div class="slider__inner">
+            <!--<img src="img/news-1.jpg" alt="">-->
+               <div class="slider__item-1">
+                   <!--<div class="slider__fon">
+                    <a href="#">
+                        <img src="img/about-fon.jpg" alt="">
+                    </a>
+                   </div>-->
+                   <div class="slider__item-content">
+                       <div class="slider__title">
+                        Реставрація живопису Кмитівського музею
+                        </div>
+                        <div class="slider__text">
+                            Музей заснований в 1970-х роках Йосипом Бухачуком знаходиться в Глибочицькій ОТГ Житомирської області, в унікальній модерністській споруді, створеній за індивідуальним проектом архітектора Михайла Сєвєрова.
+                            <p></p>
+                            <a class="slider__text-btn" href="#">Детальніше</a>
+                        </div>
+                       <!-- <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+                            Залишити заявку
+                        </a>-->
+                    </div>  
+                </div>  
+                <div class="slider__item-2">
+                    <div class="slider__item-content">
+                        <div class="slider__title">
+                            Рейди по боротьбі з незаконними рубками та браконьєрством
+                        </div>
+                        <div class="slider__text">
+                            На зібрані кошти ми плануємо закупити бензин для здійснення рейдів по Київській та Чернигівській областям для перевірки лісгоспів та заказників. При виявленні незаконних  рубок буде залучатись держекоінспекція, яка оштрафує незаконних рубщиків лісгоспу. Також під час рейдів будуть виявлятися та знищуватися браконьєрські засідки.
+                            <p></p>
+                            <a class="slider__text-btn" href="#">Детальніше</a>
+                        </div>
+                        
+                            
+                        
+                    </div>  
+                </div>  
+                <div class="slider__item-3">
+                    <div class="slider__item-content">
+                        <div class="slider__title">
+                            Зелена бібліотека
+                        </div>
+                        <div class="slider__text">
+                            Рух «Green library» розвивається в бібліотеках по всьому світу вже 20 років і пов’язаний з участю бібліотек у захисті довкілля. «Зелені бібліотеки» пропонують пов’язані з екологією послуги, літературу й електронні ресурси.
+                    <p></p>
+                    <a class="slider__text-btn" href="#">Детальніше</a>
+                        </div>
+                        <!-- <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+                            Залишити заявку style="display: inline-block;"
+                        </a>-->
+                    </div>  
+                </div>  
+            </div>
+            <div class="slider__box-flex">
+                <div class="slider__box-flex-title">
+                    INCROWD
+                </div>
+                <div class="slider__box-flex-text">
+                    Це твій вклад в розвиток cвоєї об'єднаної територіальної громади, а також сильного і відкритого 
+                    суспільства, де ти можеш зібрати гроші на свій проект та допомогти інших. Стань співзасновником добрих 
+                    справ – підтримай коштами кращі проекти своєї ОТГ!
+                </div>
+            </div>
+        </div>
+        
+        <!--<a href="#">
+            <img src="img/map.png" alt="">
+        </a>-->
+       <!-- <div class="slider__map">
+            <a href="#">
+                <img src="img/map.png" alt="">
+            </a>
+        </div>-->
+   </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about__inner">
+                <!--<div class="about__title">
+                    
+                </div>-->
+                <p></p>
+                <div class="about__sign1">
+                    “
+                </div>
+                <div class="about__text">
+                    Ніколи не буває пізно брати активну в участь в економіці та розвитку вашої територіальної громади. 
+                    Незалежно від того, чи є у вас проект чи ви просто хочете сприяти розвитку вашої ОТГ, INCROWD 
+                    спрощує ваші процедури та допомагає розпочати роботу!
+                </div>
+                <div class="about__sign2">
+                    „
+                </div>
+                <a href="about" class="about__btn default-btn">
+                    Як подати проект?
+                </a>
+            </div>
+        </div>
+    </section>
+    <a name="projects"></a>
+   <section class="projects">
+       <div class="container">
+           <div class="projects__top">
+               <div class="projects__title-box">
+                   <div class="projects__title">
+                    ПРОЕКТИ ЗАРАЗ ЧЕКАЮТЬ ТВОЄЇ ПІДТРИМКИ
+                   </div>
+               </div>
+               <div class="projects__btn">
+                   <a href="fond" target="_blank">
+                       Побачити більше проектів
+                   </a>
+                </div>
+           </div>
+           <div class="projects__items">
+               <div class="projects__item_container">
+                   <img src="img/p1.jpg" alt="">
+                   <div class="projects__contain">
+                       <div class="projects-btn-box">
+                        <a href="#" class="projects-btn-fond">Фондувати</a>
+                        <a href="#" class="projects-btn-like">  </a>
+                        <a class="projects-btn-dislike" href="#"></a>
+                        <a class="projects-btn-save" href="#"></a>
+                    </div>
+                   <div class="projects__item-title">
+                       Інклюзивний простір для "особливих" дітей і їх батьків
+                   </div>
+                   <div class="projects__item-text">
+                    Інклюзивний ХАБ - це адаптоване приміщення в центрі нашої ОТГ, де діти з інвалідністю та їх батьки зможуть реалізувати свої важливі потреби. Бо важливо - бачити серцем!
+                   </div>
+                   
+                   <div class="projects__item-author">
+                    Волиняк Дмитро
+                   </div>
+                   <div class="projects__item-otg">
+                    Великолюбінська ОТГ
+                   </div>
+                   <div class="projects__item-btn">
+                       <a class="projects__item-link" href="#">Детальніше</a>
+                       <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                        Замовити 1
+                       </a>-->
+                   </div>
+                </div>
+               </div>
+               <div class="projects__item_container">
+                   <img src="img/p8.jpg" alt="">
+                   <div class="projects__contain">
+                    <div class="projects-btn-box">
+                     <a href="#" class="projects-btn-fond">Фондувати</a>
+                     <a href="#" class="projects-btn-like"></a>
+                     <a class="projects-btn-dislike" href="#"></a>
+                     <a class="projects-btn-save" href="#"></a>
+                 </div>
+                   <div class="projects__item-title">
+                       Освічена набережна тернопільського озера.
+                   </div>
+                   <div class="projects__item-text">
+                    Найбільша окраса Тернополя це його набережна... Тож уявімо безпечні та освітлені вулиці.
+                    Також відповідного вигляду бракує замку на набережній ставу.
+                   </div>
+                   <div class="projects__item-author">
+                    Зозуляк Галина
+                   </div>
+                   <div class="projects__item-otg">
+                    Тернопільська ОТГ
+                   </div>
+                   <div class="projects__item-btn">
+                       <a class="projects__item-link" href="#">Детальніше</a>
+                       <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                           Замовити 2
+                       </a>-->
+                    </div>
+                </div>
+                </div>
+                <div class="projects__item_container">
+                    <img src="img/p2.jpg" alt="">
+                    <div class="projects__contain">
+                    <div class="projects-btn-box">
+                     <a href="#" class="projects-btn-fond">Фондувати</a>
+                     <a href="#" class="projects-btn-like"></a>
+                     <a class="projects-btn-dislike" href="#"></a>
+                     <a class="projects-btn-save" href="#"></a>
+                 </div>
+                    <div class="projects__item-title">
+                        Антикафе "Book Space" у Бібрській ОТГ
+                    </div>
+                    <div class="projects__item-text">
+                        Book Space — це модель організації роботи і відпочинку людей різного віку, та соціальних груп, у єдиному просторі.
+                    </div>
+                    <div class="projects__item-author">
+                        Чапран Діана
+                       </div>
+                       <div class="projects__item-otg">
+                        Бібрськa ОТГ
+                       </div>
+                    <a name="about"></a>
+                    <div class="projects__item-btn">
+                        <a class="projects__item-link" href="categories.html">Детальніше</a>
+                        <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                            Замовити 3
+                        </a>-->
+                    </div>
+                </div>
+            </div>
+            <div class="projects__item_container">
+                <img src="img/p4.jpg" alt="">
+                <div class="projects__contain">
+                <div class="projects-btn-box">
+                 <a href="#" class="projects-btn-fond">Фондувати</a>
+                 <a href="#" class="projects-btn-like"></a>
+                 <a class="projects-btn-dislike" href="#"></a>
+                 <a class="projects-btn-save" href="#"></a>
+             </div>
+                <div class="projects__item-title">
+                    Молодіжна галерея "ХотАртХол" у Мостиськах
+                </div>
+                <div class="projects__item-text">
+                    «ХотАртХол» - перша молодіжна галерея у Мостиській обєднаній територіальній громаді, покликана експонувати мистецькі дебюти.
+                </div>
+                <div class="projects__item-author">
+                    Мельничок Анастасія
+                   </div>
+                   <div class="projects__item-otg">
+                    Мостиська ОТГ
+                   </div>
+                <a name="about"></a>
+                <div class="projects__item-btn">
+                    <a class="projects__item-link" href="categories.html">Детальніше</a>
+                    <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                        Замовити 3
+                    </a>-->
+                </div>
+            </div>
+        </div>
+       </div>
+
+       <div class="projects__items">
+        <div class="projects__item_container">
+            <img src="img/p9.jpeg" alt="">
+            <div class="projects__contain">
+                <div class="projects-btn-box">
+                 <a href="#" class="projects-btn-fond">Фондувати</a>
+                 <a href="#" class="projects-btn-like">  </a>
+                 <a class="projects-btn-dislike" href="#"></a>
+                 <a class="projects-btn-save" href="#"></a>
+             </div>
+            <div class="projects__item-title">
+                Приводимо до ладу дорогу Губин – Тумин!
+            </div>
+            <div class="projects__item-text">
+                Ми втомилися чекати, коли держава почне щось робити, і хочемо силами двох ОТГ віреконструювати дорогу, яка нас об’єднує.
+            </div>
+            <div class="projects__item-author">
+                Капустенська Марія
+               </div>
+               <div class="projects__item-otg">
+                Війницька ОТГ
+               </div>
+            <div class="projects__item-btn">
+                <a class="projects__item-link" href="#">Детальніше</a>
+                <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                 Замовити 1
+                </a>-->
+            </div>
+         </div>
+        </div>
+        <div class="projects__item_container">
+            <img src="img/p6.jpg" alt="">
+            <div class="projects__contain">
+             <div class="projects-btn-box">
+              <a href="#" class="projects-btn-fond">Фондувати</a>
+              <a href="#" class="projects-btn-like"></a>
+              <a class="projects-btn-dislike" href="#"></a>
+              <a class="projects-btn-save" href="#"></a>
+          </div>
+            <div class="projects__item-title">
+                "Боже,вільна школа" Відновлення із попелу.
+            </div>
+            <div class="projects__item-text">
+                Відновлюємо після пожежі приміщення "Боже,вільної школи" - освітнього центру для дітей та дорослих.
+            </div>
+            <div class="projects__item-author">
+                Черняк Анатолій
+               </div>
+               <div class="projects__item-otg">
+                Авангардівська ОТГ
+               </div>
+            <div class="projects__item-btn">
+                <a class="projects__item-link" href="1project">Детальніше</a>
+                <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                    Замовити 2
+                </a>-->
+             </div>
+         </div>
+         </div>
+         <div class="projects__item_container">
+             <img src="img/p7.jpg" alt="">
+             <div class="projects__contain">
+             <div class="projects-btn-box">
+              <a href="#" class="projects-btn-fond">Фондувати</a>
+              <a href="#" class="projects-btn-like"></a>
+              <a class="projects-btn-dislike" href="#"></a>
+              <a class="projects-btn-save" href="#"></a>
+          </div>
+             <div class="projects__item-title">
+                Зробимо Зеленопідську ОТГ знову зеленою!
+             </div>
+             <div class="projects__item-text">
+                Дерева - як люди, інколи хворіють, а інколи вмирають. Дерева - це наші легені Але ми губимо їх, хоча вони хочуть, щоб ми жили...
+             </div>
+             <div class="projects__item-author">
+                Волиняк Дмитро
+               </div>
+               <div class="projects__item-otg">
+                Зеленопідська ОТГ 
+               </div>
+             <a name="about"></a>
+             <div class="projects__item-btn">
+                 <a class="projects__item-link" href="categories.html">Детальніше</a>
+                 <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                     Замовити 3
+                 </a>-->
+             </div>
+         </div>
+     </div>
+     <div class="projects__item_container">
+         <img src="img/p5.jpg" alt="">
+         <div class="projects__contain">
+         <div class="projects-btn-box">
+          <a href="#" class="projects-btn-fond">Фондувати</a>
+          <a href="#" class="projects-btn-like"></a>
+          <a class="projects-btn-dislike" href="#"></a>
+          <a class="projects-btn-save" href="#"></a>
+      </div>
+         <div class="projects__item-title">
+            Центр творчої діяльності для дітей
+         </div>
+         <div class="projects__item-text">
+            Наша мета - облаштувати кімнату "Центр творчої діяльності" комп'ютерним обладнанням і надати безкоштовні послуги для навчання та організації дозвілля
+         </div>
+         <div class="projects__item-author">
+            Сердяк Михайло
+           </div>
+           <div class="projects__item-otg">
+            Андрушківська ОТГ
+           </div>
+         <a name="about"></a>
+         <div class="projects__item-btn">
+             <a class="projects__item-link" href="categories.html">Детальніше</a>
+             <!--<a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+                 Замовити 3
+             </a>-->
+         </div>
+     </div>
+ </div>
+</div>
+
+    </section>
+    <a name="contacts"></a>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="container">
+                <div class="footer__inner">
+                    <a href="main">
+                        <div class="to_top s-arrow" style="display: inline-block">
+                            </div>
+                            </a>
+                    <div class="footer__info">
+                        <div class="footer__title">
+                            INCROWD
+                        </div>
+                        <div class="footer__text">
+                            Краудфандингова платформа для розвитку об'єднаних територіальних громад.
+                        </div>
+                        <!--<a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+                            Безкоштовна консультація
+                        </a>-->
+                        <ul class="footer__list">
+                            <li><a class="footer__phone" href="tel:380632821043"> +38 (063) 616 56 21</a></li>
+                            <li><a href="#">olgamakarmyhailivna@gmail.com</a></li>
+                            <li><a class="footer__adress" href="#">Україна</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10938209.494752761!2d22.208320093863712!3d47.98547154770034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDRl9C90LA!5e0!3m2!1suk!2sua!4v1589296788537!5m2!1suk!2sua" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy">
+            <div class="container">
+                <div class="copy__text">
+                    с 2020 Template by  Olga Makar. Всі права захищені.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="modal">
+        <form action="/register" method="POST">
+            <input type="text" id="name" name="name" required placeholder="ПІБ"/>
+            <input 
+            type="email" 
+            id="email" 
+            name="email"
+            placeholder="Ваша електронна пошта"
+            />
+            <input type="text" placeholder="Ваш номер телефону" />
+            <input 
+            type="password" 
+            id="password" 
+            name="password"
+            placeholder="Пароль"
+            />
+            <input type="submit" id="registrationButton" value="Зареєструватися">
+        </form>
+    </div>
+    
+    <div id="modal1"> 
+        <form action="/login" method="POST">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ваш логін"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Ваш пароль"
+            />
+            <input type="submit" value="Увійти" />
+          </form>
+    </div> 
+    <div id="modal2"> 
+        <form>
+            <label> Сума внеску в грн
+            </label>
+            <input type="text" placeholder="Вкажіть суму внеску">
+            <label> Спосіб орлати LIQ Pay
+            </label>
+            <input type="submit" value="Оплатити">
+        </form>
+    </div> 
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src= "js/jquery.formstyler.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

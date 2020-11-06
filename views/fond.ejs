@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/jquery.fancybox.min.css"> 
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/jquery.formstyler.css"> 
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style2.css"> -->
+        <link rel="stylesheet" href="css/media.css">
+        <script>
+        let projects = JSON.parse('<%- JSON.stringify(projects.map(project => ({ id: project.id, success: project.success, inProcess: project.inProcess, categories: project.categories, areaId: project.areaId, communitiesId: project.communitiesId }))) %>');
+        let communities = JSON.parse('<%- JSON.stringify(communities.map(community => ({ id: community.id, area_id: community.area_id, }))) %>');        
+        </script>
+    </head>
+<body>
+    <header class="header">
+        <section class="header1">
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__contacts">
+                        <div class="header__content-inner">
+                            <div class="header__logo">
+                                <a href="main">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                            </div>
+                            <nav class="menu">
+                                <div class="header__btn-menu">
+                                    <span class="icon-list-ul"></span>
+                                </div>
+                                <ul>
+                                    <li><a href="#about">Про нас</a></li>
+                                    <li><a href="post">Подати проект</a></li>
+                                    <li><a href="fond">Фондувати</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="header-sign">
+                        <% if (!authData.state) { %>
+                        <a 
+                        data-fancybox 
+                        data-src="#modal" 
+                        href="javascript:;" 
+                        class="header__btn-signin" 
+                        href="#"
+                        >
+                            Реєстрація
+                        </a>
+                        <a 
+                        data-fancybox 
+                        data-src="#modal1" 
+                        href="javascript:;" 
+                        class="header__btn-signup" 
+                        href="#"
+                        >
+                            Вхід
+                        </a>
+
+                        <% } else if (authData.state && authData.name) { %> 
+                            Вітаємо, <%= authData.name %>! <% } %>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section class="projects1">
+        <div class="container">
+            <div class="projects__top">
+                <div class="projects__title-box">
+                    <div class="projects__title">
+                        ПРОЕКТИ ЗАРАЗ ЧЕКАЮТЬ ТВОЄЇ ПІДТРИМКИ! 
+                        <p></p>Стань співзасновником добрих 
+                        справ – підтримай коштами кращі проекти своєї ОТГ!
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="projects__choose">
+
+                <div class="projects__text-box">
+                    Показати мені всі проекти 
+                </div>
+                <div class="projects__choose-box">
+                    <div class="projects__choose-box-categories">
+                        <label>
+                            Категорія
+                            <select>
+                                <option value="0" class="categoriesSelect">Усі категорії</option>
+                                <option value="1" class="categoriesSelect">Транспорт</option>
+                                <option value="2" class="categoriesSelect">Діти</option>
+                                <option value="3" class="categoriesSelect">Здоров'я</option>
+                                <option value="4" class="categoriesSelect">Література</option>
+                                <option value="5" class="categoriesSelect">Економіка</option>
+                                <option value="6" class="categoriesSelect">Освіта</option>
+                                <option value="7" class="categoriesSelect">Інтернет</option>
+                                <option value="8" class="categoriesSelect">Екологія</option>
+                                <option value="9" class="categoriesSelect">Технології</option>
+                                <option value="10" class="categoriesSelect">Дороги</option>
+                                <option value="11" class="categoriesSelect">Соціальний бізнес</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="projects__choose-box-oblast">
+                        <label>
+                            Область
+                            <select>
+                                <option id="area_0" class="select_area" value=0>Усі області</option>
+                                <option id="area_1" class="select_area" value=1>Вінницька область</option>
+                                <option id="area_2" class="select_area" value=2>Волинська область</option>
+                                <option id="area_3" class="select_area" value=3>Дніпропетровська область</option>
+                                <option id="area_9" class="select_area" value=9>Донецька область</option>
+                                <option id="area_10" class="select_area" value=10>Житомирська область</option>
+                                <option id="area_4" class="select_area" value=4>Закарпатська область</option>
+                                <option id="area_5" class="select_area" value=5>Запорізька область</option>
+                                <option id="area_6" class="select_area" value=6>Івано-Франківська область</option>
+                                <option id="area_11" class="select_area" value=11>Київська область</option>
+                                <option id="area_7" class="select_area" value=7></option>Кіровоградська область</option>
+                                <option id="area_12" class="select_area" value=12>Луганська область</option>
+                                <option id="area_13" class="select_area" value=13>Львівська область</option>
+                                <option id="area_14" class="select_area" value=14>Миколаївська область</option>
+                                <option id="area_15" class="select_area" value=15>Одеська область</option>
+                                <option id="area_16" class="select_area" value=16>Полтавська область</option>
+                                <option id="area_17" class="select_area" value=17>Рівненська область</option>
+                                <option id="area_18" class="select_area" value=18>Сумська область</option>
+                                <option id="area_19" class="select_area" value=19>Тернопільська область</option>
+                                <option id="area_20" class="select_area" value=20>Харківська область</option>
+                                <option id="area_21" class="select_area" value=21>Херсонська область</option>
+                                <option id="area_22" class="select_area" value=22>Хмельницька область</option>
+                                <option id="area_23" class="select_area" value=23>Черкаська область</option>
+                                <option id="area_24" class="select_area" value=24>Чернівецька область</option>
+                                <option id="area_25" class="select_area" value=25>Чернігівська область</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="projects__choose-box-otg">
+                        <label>
+                            ОТГ
+                            <select>
+                                <option id="communities-0"  class="select_communities">Усі ОТГ</option>
+                                <% for(let i =0; i<communities.length; i++){ %>
+                                    <option id="communities-<%= communities[i].id %>" class="select_communities"><%= communities[i].title %></option>
+                                <% } %>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <p>
+                </p>
+                            
+                        <!--</div>
+                    </form>
+                </div>-->
+                
+            </div>
+            <div class="projects__show">
+                Статус проекту
+            </div>
+                <label class="container__check">Усі проекти
+                    <input type="checkbox"
+                    checked="checked" id="statusAllSelect">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="container__check">Виконуються
+                    <input type="checkbox" id="statusInProcessSelect">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="container__check">Успішні
+                    <input type="checkbox" id="statusSuccessSelect">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="container__check">Неуспішні
+                    <input type="checkbox" id="statusNotSuccessSelect">
+                    <span class="checkmark"></span>
+                </label>
+
+
+
+               <!-- <input type="checkbox" checked><label> Усі проекти</label>
+                <input type="checkbox" checked><label> Виконуються</label>
+                <input type="checkbox" checked><label> Успішні</label>
+                <input type="checkbox" checked><label> Неуспішні</label>-->
+            
+
+
+
+            <div class="projects__items">
+
+            <% for(let i =0; i<projects.length; i++){ %>
+
+                <div class="projects__item_container" id="projects__item__<%= projects[i].id %>">
+                    <img src=<%= projects[i].imageSrc %> alt="">
+                    <div class="projects__contain">
+                        <div class="projects-btn-box">
+                            <a href="<%= paymentLink %>" class="projects-btn-fond">Фондувати</a>
+                            <div class="projects-btn-like" onclick="this.classList.toggle('projects-btn-like-on')"></div>
+                            <div class="projects-btn-dislike" onclick="this.classList.toggle('projects-btn-dislike-on')"></div>
+                            <div class="projects-btn-save" onclick="this.classList.toggle('projects-btn-save-on')"></div>
+                        </div>
+                        <div class="projects__item-title">
+                            <%= projects[i].title %>
+                        </div>
+                        <div class="projects__item-text">
+                            <%= projects[i].text %>
+                        </div>
+                        
+                        <div class="projects__item-author">
+                            <%= projects[i].author %>
+                        </div>
+                        <div class="projects__item-otg">
+                            <%= projects[i].otgName %>
+                        </div>
+                        <div class="projects__item-btn">
+                            <a class="projects__item-link" href="/project/1">Детальніше</a>
+                        </div>
+                    </div>
+                </div>
+
+            <% } %>
+                
+        </div>
+     </section>
+     <footer class="footer">
+        <div class="footer__content">
+            <div class="container">
+                <div class="footer__inner">
+                    <a href="main">
+                        <div class="to_top s-arrow" style="display: inline-block">
+                            </div>
+                            </a>
+                    <div class="footer__info">
+                        <div class="footer__title">
+                            INCROWD
+                        </div>
+                        <div class="footer__text">
+                            Краудфандингова платформа для розвитку об'єднаних територіальних громад.
+                        </div>
+                        <!--<a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+                            Безкоштовна консультація
+                        </a>-->
+                        <ul class="footer__list">
+                            <li><a class="footer__phone" href="tel:380632821043"> +38 (063) 616 56 21</a></li>
+                            <li><a href="#">olgamakarmyhailivna@gmail.com</a></li>
+                            <li><a class="footer__adress" href="#">Україна</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10938209.494752761!2d22.208320093863712!3d47.98547154770034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDRl9C90LA!5e0!3m2!1suk!2sua!4v1589296788537!5m2!1suk!2sua" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy">
+            <div class="container">
+                <div class="copy__text">
+                    с 2020 Template by  Olga Makar. Всі права захищені.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="modal">
+        <form action="/register" method="POST">
+            <input type="text" id="name" name="name" required placeholder="ПІБ"/>
+            <input 
+            type="email" 
+            id="email" 
+            name="email"
+            placeholder="Ваша електронна пошта">
+            <input type="text" placeholder="Ваш номер телефону">
+            <input 
+            type="password" 
+            id="password" 
+            name="password"
+            placeholder="Пароль">
+            <input type="submit" id="registrationButton" value="Зареєструватися">
+        </form>
+    </div>
+    
+    <div id="modal1"> 
+        <form action="/login" method="POST">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ваш логін"
+              required
+            />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Ваш пароль"
+            />
+            <input type="submit" value="Увійти" />
+          </form>
+    </div> 
+    <div id="modal2"> 
+        <form>
+            <label> Сума внеску в грн
+            </label>
+            <input type="text" placeholder="Вкажіть суму внеску">
+            <label> Спосіб орлати LIQ Pay
+            </label>
+            <input type="submit" value="Оплатити">
+        </form>
+    </div> 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src= "js/jquery.formstyler.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/windowOnload.js"></script>
+</body>
+</html>

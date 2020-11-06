@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../css/normalize.css">
+            <link rel="stylesheet" href="../css/fonts.css">
+            <link rel="stylesheet" href="../css/jquery.fancybox.min.css"> 
+            <link rel="stylesheet" href="../css/slick.css">
+            <link rel="stylesheet" href="../css/jquery.formstyler.css"> 
+            <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="../css/style2.css">
+            <link rel="stylesheet" href="../css/media.css">
+    </head>
+    <body>
+        <header class="header">
+            <section class="header1">
+                <div class="header__top">
+                    <div class="container">
+                        <div class="header__contacts">
+                            <div class="header__content-inner">
+                                <div class="header__logo">
+                                    <a href="index.html">
+                                        <img src="../img/logo.png" alt="">
+                                    </a>
+                                </div>
+                                <nav class="menu">
+                                    <div class="header__btn-menu">
+                                        <span class="icon-list-ul"></span>
+                                    </div>
+                                    <ul>
+                                        <li><a href="#about">Про нас</a></li>
+                                        <li><a href="post">Подати проект</a></li>
+                                        <li><a href="fond">Фондувати</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-sign">
+                                <% if (!authData.state) { %>
+                                    <a 
+                                    data-fancybox 
+                                    data-src="#modal" 
+                                    href="javascript:;" 
+                                    class="header__btn-signin" 
+                                    href="#"
+                                    >
+                                        Реєстрація
+                                    </a>
+                                    <a 
+                                    data-fancybox 
+                                    data-src="#modal1" 
+                                    href="javascript:;" 
+                                    class="header__btn-signup" 
+                                    href="#"
+                                    >
+                                        Вхід
+                                    </a>
+            
+                                    <% } else if (authData.state && authData.name) { %> 
+                                        Вітаємо, <%= authData.name %>! <% } %>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+        <section class="about1">
+            <div class="container">
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2gOlINxYvHM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        
+            
+                    <!--<div class="about1__text">
+                        "..Ми постійно вдосконалюємось, тому що нас влаштовує тільки найкращий результат без жодних компромісів!..""
+                    </div>
+                    <a href="№" class="about1__btn default-btn">
+                        Дізнатися більше
+                    </a>-->
+                    <div class="project1-btn-box">
+
+                        <a class="project1-btn-fond" href="<%= paymentLink %>">
+                            Фондувати
+                        </a>
+                        <div class="projects-btn-like" onclick="this.classList.toggle('projects-btn-like-on')"></div>
+                        <div class="projects-btn-dislike" onclick="this.classList.toggle('projects-btn-dislike-on')"></div>
+                        <div class="projects-btn-save" onclick="this.classList.toggle('projects-btn-save-on')"></div>
+                    </div>
+                    <div class="project1-info-box">
+                        <div class="project1-info-box-first">
+                        <div class="project1-money">
+                            <%= project.recaivedAmount %> грн
+                        </div>
+                        <div class="project1-fonder">
+                            <%= project.backerCount %>
+                        </div>
+                        <div class="project1-days">
+                            <%= project.durationDays - Math.floor(( Date.parse((new Date()).toISOString()) - Date.parse(project.dateStart) ) / 86400000)  %> днів
+                        </div>
+                    </div>
+                    <div class="project1-info-box-second">
+                        <div class="project1-money1">
+                            зібрано з <%= project.neededAmount %> грн
+                        </div>
+                        <div class="project1-fonder1">
+                            доброчинців
+                        </div>
+                        <div class="project1-days1">
+                            до завершення
+                        </div>
+                    </div>
+                    <div class="project1-info-box-third">
+                        <div class="project1-location">
+                            Авангардівська ОТГ
+                        </div>
+                        <div class="project1-author">
+                            Черняк Анатолій
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+        </section>
+        <section class="aboutagency">
+            <div class="container">
+                <div class="about2__main-title">
+                    "Боже,вільна школа" Відновлення із попелу. Відновлюємо після пожежі приміщення "Боже,вільної школи" - освітнього центру для дітей та дорослих.
+                </div>
+                <div class="about2__title">
+                    ІСТОРІЯ
+                </div>
+                <div class="about2__text">
+                    Боже,вільна школа – освітній проект для дітей-хоумскулерів (сімейна форма освіти) та дорослих, яким цікава взаємодія із ними.
+                    Це батьківська ініціатива, що існує уже три роки. Основний фокус - демократична освіта.
+                </div>
+                <div class="about2__title">
+                    ЩО СТАЛОСЯ?
+                </div>
+                <div class="about2__text">
+                    11 лютого 2020 року будинок, у якому кипіло життя нашої «Боже,вільної школи» згорів ущент. Це був Дім, збудований власним коштом і власними зусиллями. Вагон і маленький возик, що були призначені для можливостей, наповнилися вугіллям і уламками.
+
+                    Після пожежі ми почувалися сценаристами, яким треба визначити, буде у цієї історії трагічний кінець, тобто Боже,вільна школа перестане існувати, чи хеппі енд, тобто ми наважимось на перезавантаження.
+                </div>
+            
+                <img class="about2__img" src="../img/school.gif" alt="">
+            </div>
+                <div class="about2__title">
+                    ЩО ДАЛІ?
+                </div>
+                <div class="about2__text">
+                    Для того, щоб втілити весь намріяний зміст, нам необхідно забезпечити "форму".
+                    Попереду ще багато роботи, і ми працюємо, не покладаючи рук.
+                    Ми живемо у матеріальному світі, і є речі, які можна купити лише за гроші.
+                    Тому ми із великою надією і вірою у добро пропонуємо тим, кому близький наш задум, взяти участь у його реалізації.
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer__content">
+                <div class="container">
+                    <div class="footer__inner">
+                        <a href="main">
+                            <div class="to_top s-arrow" style="display: inline-block">
+                                </div>
+                                </a>
+                        <div class="footer__info">
+                            <div class="footer__title">
+                                INCROWD
+                            </div>
+                            <div class="footer__text">
+                                Краудфандингова платформа для розвитку об'єднаних територіальних громад.
+                            </div>
+                            <!--<a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+                                Безкоштовна консультація
+                            </a>-->
+                            <ul class="footer__list">
+                                <li><a class="footer__phone" href="tel:380632821043"> +38 (063) 616 56 21</a></li>
+                                <li><a href="#">olgamakarmyhailivna@gmail.com</a></li>
+                                <li><a class="footer__adress" href="#">Україна</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10938209.494752761!2d22.208320093863712!3d47.98547154770034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d1d9c154700e8f%3A0x1068488f64010!2z0KPQutGA0LDRl9C90LA!5e0!3m2!1suk!2sua!4v1589296788537!5m2!1suk!2sua" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copy">
+                <div class="container">
+                    <div class="copy__text">
+                        с 2020 Template by  Olga Makar. Всі права захищені.
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="modal">
+            <form action="/register" method="POST">
+                <input type="text" id="name" name="name" required placeholder="ПІБ"/>
+                <input 
+                type="email" 
+                id="email" 
+                name="email"
+                placeholder="Ваша електронна пошта">
+                <input type="text" placeholder="Ваш номер телефону">
+                <input 
+                type="password" 
+                id="password" 
+                name="password"
+                placeholder="Пароль">
+                <input type="submit" id="registrationButton" value="Зареєструватися">
+            </form>
+        </div>
+        
+        <div id="modal1"> 
+            <form action="/login" method="POST">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Ваш логін"
+                  required
+                />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  placeholder="Ваш пароль"
+                />
+                <input type="submit" value="Увійти" />
+              </form>
+        </div> 
+<div id="modal2"> 
+    <form>
+        <label> Сума внеску в грн
+        </label>
+        <input type="text" placeholder="Вкажіть суму внеску">
+        <label> Спосіб орлати LIQ Pay
+        </label>
+        <input type="submit" value="Оплатити">
+    </form>
+</div> 
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../js/jquery.fancybox.min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src= "../js/jquery.formstyler.min.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>
